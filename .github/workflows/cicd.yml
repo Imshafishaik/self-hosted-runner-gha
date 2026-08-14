@@ -1,0 +1,13 @@
+name: self-hosting-practice
+
+on: 
+  push
+
+jobs:
+  b16-first-job:
+    runs-on: self-hosted
+
+    steps:
+      - name: message
+        run: echo "Hello we are practicing github actions selfhosted"
+    
