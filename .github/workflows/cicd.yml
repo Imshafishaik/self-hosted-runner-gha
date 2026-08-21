@@ -8,8 +8,8 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    #runs-on: self-hosted
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -22,7 +22,7 @@ jobs:
       #     java-version: '11'
 
       - name: Build WAR using Maven
-        run: mvn clean package
+        run: mvn clean install
        # run: mvn clean package -DskipTests
 
       - name: Deploy WAR to Tomcat
