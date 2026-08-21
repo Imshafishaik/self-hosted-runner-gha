@@ -1,3 +1,3 @@
 <html>
-<div>hello we are practicing self hosted runners with github actions</div>
+<div>hello we are freefire gamers</div>
 </html>
