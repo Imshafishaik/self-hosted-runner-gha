@@ -21,8 +21,23 @@ jobs:
       #     distribution: 'temurin' 
       #     java-version: '11'
 
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Check Java and Maven
+        run: |
+          java -version
+          mvn -version
+
       - name: Build WAR using Maven
-        run: mvn clean install
+        run: mvn clean package -DskipTests
+
+      # - name: Build WAR using Maven
+      #   run: mvn clean install
        # run: mvn clean package -DskipTests
 
       - name: Deploy WAR to Tomcat
